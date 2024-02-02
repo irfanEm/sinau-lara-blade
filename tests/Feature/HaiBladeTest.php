@@ -56,4 +56,22 @@ class HaiBladeTest extends TestCase
             ->assertSeeText('{{ $nama }}')
             ->assertDontSeeText('balqis FA');
     }
+
+    public function testIfView()
+    {
+        $this->view('if', [
+            "hobi2" => ["mancing", "minecraft"]
+        ])
+            ->assertSeeText('Saya memiliki beberapa hobi.');
+        
+        $this->view('if', [
+            "hobi2" => ["mancing"]
+        ])
+            ->assertSeeText('Saya memiliki sebuah hobi.');
+
+        $this->view('if', [
+            "hobi2" => []
+        ])
+            ->assertSeeText('Saya tidak memiliki hobi.');
+    }
 }
