@@ -6,3 +6,20 @@ Point sinau-lara-blade
 @env - @endenv
 @switch - @case - @break - @default -@endswitch
 @for - @endfor
+
+@each
+@once
+form : @checked, @selected, @disabled, @readonly, @required
+@csrf
+@error - $message
+@push
+@stack
+@prepend
+inheritence : @yield, @section, @extends
+@show, @parent
+@inject
+extending blade
+custom echo handler
+
+php artisan view:cache
+php artisan view:clear
